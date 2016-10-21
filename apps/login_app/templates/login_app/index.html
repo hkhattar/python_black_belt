@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	{% load staticfiles %}
+	 <link rel="stylesheet" href="{% static 'login_app/css/style.css' %}" media="screen" title="no title"  charset="utf-8">
+</head>
+<body>
+<h1>Welcome!</h1>
+		<h2>Registration</h2>
+		<form action="/register" method="post" class="input" class="registration">
+		{% csrf_token %}
+			<label class="input">
+				Name: <input type="text" name="first_name" >
+			</label>
+
+			<label class="input">
+				Username Name: <input type="text" name="last_name" >
+			</label>
+
+			<label class="input">
+				Email: <input type="text" name="email" >
+			</label>
+			
+			<label class="input">
+				Password: <input type="password" name="password" >
+			</label>
+			
+			
+			<p>*Password should be at least 8 characters</p>
+			<label classs="input">
+				Confirm Password: <input type="password" name="confirm_password" >
+			</label>
+			
+			<label class="input">
+				<input type="submit" name="submit" value="Register" >
+			</label>
+		</form>
+
+
+		<!-- <ul class="messages"> -->
+		
+    {% for message in messages %}
+    <p{% if message.tags  == 'info' %} class="{{ message.tags }}" id="messages">{{ message }}{% endif %}</p>
+    {% endfor %}
+    	
+
+
+
+		<h2>Login</h2>
+		<form action="/login" method="post" class="input" class="login">
+		{% csrf_token %}
+			<label class="input">
+				Email: <input type="text" name="email">
+			</label >
+			<label class="input">
+				Password: <input type="password" name="password">
+			</label>
+			<label class="input">
+				<input type="submit" name="submit" value="Register">
+			</label>
+			
+		</form>
+    {% for message in messages %}
+
+	    <p{% if message.tags == 'error' %} class="{{ message.tags }}" id="messages">{{ message }}{% endif %}</p>
+    {% endfor %}
+
+</body>
+</html>

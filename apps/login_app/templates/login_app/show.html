@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>show</title>
+	{% load staticfiles %}
+	 <link rel="stylesheet" href="{% static 'login_app/css/style.css' %}" media="screen" title="no title"  charset="utf-8">
+</head>
+<body>
+<p class="logout">
+<a href="/home">Home</a>
+<a href="/logout">Logout</a>
+</p>
+{{item}}
+<p>Users who added this product/item under their wish list:</p>
+{{request.session.first_name}}
+</body>
+</html>

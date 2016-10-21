@@ -1,0 +1,22 @@
+.input,.login,.registration
+{
+	display: block;
+	margin:10px;
+}
+
+.logout
+{
+	text-align: right;
+	margin:10px;
+	font-size: 20px;
+}
+
+th
+{
+	padding:20px;
+}
+
+td
+{
+	padding:20px;
+}
